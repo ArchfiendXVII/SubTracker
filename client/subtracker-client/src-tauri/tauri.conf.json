@@ -11,13 +11,16 @@
   },
   "app": {
     "withGlobalTauri": true,
-    "windows": [
-      {
-        "title": "subtracker-client",
-        "width": 800,
-        "height": 600
-      }
-    ],
+"windows": [
+  {
+    "transparent": true,
+    "decorations": false,
+    "resizable": false,
+    "title": "SubTracker",
+    "width": 290,
+    "dragDropEnabled": false
+  }
+],
     "security": {
       "csp": null
     }
