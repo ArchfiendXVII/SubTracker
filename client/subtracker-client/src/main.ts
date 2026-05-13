@@ -1,19 +1,14 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const cogBtn = document.querySelector('.cog');
-  const cogMenu = document.getElementById('cog-menu');
+  const desklet = document.querySelector('.desklet');
 
-  // Toggle cog menu
-  cogBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    cogMenu?.classList.toggle('visible');
+  document.getElementById('open-settings')?.addEventListener('click', () => {
+    desklet?.classList.add('settings-open');
   });
 
-  // Close on click outside
-  document.addEventListener('click', () => {
-    cogMenu?.classList.remove('visible');
+  document.getElementById('close-settings')?.addEventListener('click', () => {
+    desklet?.classList.remove('settings-open');
   });
 
-  // Quit
   document.getElementById('quit')?.addEventListener('click', () => {
     window.close();
   });

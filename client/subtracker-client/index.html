@@ -10,87 +10,86 @@
   <body>
     <div class="desklet">
 
-      <!-- Top bar / drag handle -->
-      <div class="topbar" id="drag-region" data-tauri-drag-region>
-        <span class="title">SubTracker</span>
-        <span class="cog">⚙</span>
+      <!-- Main Panel -->
+      <div class="panel" id="panel-main">
+        <div class="topbar" id="drag-region" data-tauri-drag-region>
+          <span class="title">SubTracker</span>
+          <span class="cog" id="open-settings">⚙</span>
+        </div>
+
+        <div class="fc-group">
+          <div class="fc-name">Glycine Bloom</div>
+          <div class="divider"></div>
+
+          <div class="sub-entry voyage">
+            <div class="sub-sprite"></div>
+            <div class="sub-info">
+              <span class="sub-name">Dark Herald</span>
+              <span class="sub-status">2h 30m remaining</span>
+              <span class="sub-route">Cieldalaes 1 → Deep-sea Site 4</span>
+            </div>
+            <div class="status-dot yellow"></div>
+          </div>
+
+          <div class="sub-entry repair">
+            <div class="sub-sprite"></div>
+            <div class="sub-info">
+              <span class="sub-name">COLLATORAL SHOT</span>
+              <span class="sub-status">Needs repair</span>
+            </div>
+            <div class="status-dot red"></div>
+          </div>
+
+          <div class="sub-entry returned">
+            <div class="sub-sprite"></div>
+            <div class="sub-info">
+              <span class="sub-name">Sub Three</span>
+              <span class="sub-status">Returned — ready</span>
+            </div>
+            <div class="status-dot green"></div>
+          </div>
+        </div>
       </div>
 
-      <!-- FC Group -->
-      <div class="fc-group">
-        <div class="fc-name">Glycine Bloom</div>
-        <div class="divider"></div>
-
-        <!-- Submarine: On Voyage -->
-        <div class="sub-entry voyage">
-          <div class="sub-sprite"></div>
-          <div class="sub-info">
-            <span class="sub-name">Dark Herald</span>
-            <span class="sub-status">2h 30m remaining</span>
-            <span class="sub-route">Cieldalaes 1 → Deep-sea Site 4</span>
-          </div>
-          <div class="status-dot yellow"></div>
+      <!-- Settings Panel -->
+      <div class="panel" id="panel-settings">
+        <div class="topbar" data-tauri-drag-region>
+          <span class="back" id="close-settings">Back →</span>
+          <span class="title">Settings</span>
         </div>
 
-        <!-- Submarine: Needs Repair -->
-        <div class="sub-entry repair">
-          <div class="sub-sprite"></div>
-          <div class="sub-info">
-            <span class="sub-name">COLLATORAL SHOT</span>
-            <span class="sub-status">Needs repair</span>
+        <div class="settings-body">
+          <div class="setting-group">
+            <div class="setting-label">Notification mode</div>
+            <label class="setting-option">
+              <input type="radio" name="notif-mode" value="per-sub" checked />
+              Per submarine
+            </label>
+            <label class="setting-option">
+              <input type="radio" name="notif-mode" value="all-done" />
+              All active done (per FC)
+            </label>
           </div>
-          <div class="status-dot red"></div>
-        </div>
 
-        <!-- Submarine: Returned -->
-        <div class="sub-entry returned">
-          <div class="sub-sprite"></div>
-          <div class="sub-info">
-            <span class="sub-name">Sub Three</span>
-            <span class="sub-status">Returned — ready</span>
+          <div class="setting-divider"></div>
+
+          <div class="setting-group">
+            <div class="setting-label">Warning threshold</div>
+            <div class="setting-threshold">
+              <input type="number" id="threshold-input" min="5" max="120" value="30" />
+              <span>minutes before return</span>
+            </div>
           </div>
-          <div class="status-dot green"></div>
-        </div>
 
+          <div class="setting-divider"></div>
+
+          <div class="setting-group">
+            <div class="setting-item" id="hide-to-tray">Hide to tray</div>
+            <div class="setting-item danger" id="quit">Quit</div>
+          </div>
+        </div>
       </div>
+
     </div>
-
-    <!-- Cog Menu — outside desklet -->
-    <div class="cog-menu" id="cog-menu">
-      <div class="cog-section">
-        <div class="cog-item" id="hide-to-tray">Hide to tray</div>
-      </div>
-
-      <div class="cog-divider"></div>
-
-      <div class="cog-section">
-        <div class="cog-label">Notification mode</div>
-        <label class="cog-option">
-          <input type="radio" name="notif-mode" value="per-sub" checked />
-          Per submarine
-        </label>
-        <label class="cog-option">
-          <input type="radio" name="notif-mode" value="all-done" />
-          All active done (per FC)
-        </label>
-      </div>
-
-      <div class="cog-divider"></div>
-
-      <div class="cog-section">
-        <div class="cog-label">Warning threshold</div>
-        <div class="cog-threshold">
-          <input type="number" id="threshold-input" min="5" max="120" value="30" />
-          <span>minutes before</span>
-        </div>
-      </div>
-
-      <div class="cog-divider"></div>
-
-      <div class="cog-section">
-        <div class="cog-item danger" id="quit">Quit</div>
-      </div>
-    </div>
-
   </body>
 </html>
