@@ -54,5 +54,43 @@
 
       </div>
     </div>
+
+    <!-- Cog Menu — outside desklet -->
+    <div class="cog-menu" id="cog-menu">
+      <div class="cog-section">
+        <div class="cog-item" id="hide-to-tray">Hide to tray</div>
+      </div>
+
+      <div class="cog-divider"></div>
+
+      <div class="cog-section">
+        <div class="cog-label">Notification mode</div>
+        <label class="cog-option">
+          <input type="radio" name="notif-mode" value="per-sub" checked />
+          Per submarine
+        </label>
+        <label class="cog-option">
+          <input type="radio" name="notif-mode" value="all-done" />
+          All active done (per FC)
+        </label>
+      </div>
+
+      <div class="cog-divider"></div>
+
+      <div class="cog-section">
+        <div class="cog-label">Warning threshold</div>
+        <div class="cog-threshold">
+          <input type="number" id="threshold-input" min="5" max="120" value="30" />
+          <span>minutes before</span>
+        </div>
+      </div>
+
+      <div class="cog-divider"></div>
+
+      <div class="cog-section">
+        <div class="cog-item danger" id="quit">Quit</div>
+      </div>
+    </div>
+
   </body>
 </html>
